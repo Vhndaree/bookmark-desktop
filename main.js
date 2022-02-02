@@ -1,11 +1,14 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const windowStateKeeper = require('electron-window-state');
+const updater = require('./updater');
 const readItem = require('./readItem')
 const appMenu = require('./menu');
 
 let mainWindow = null;
 
 const createWindow = () => {
+  setTimeout(updater, 3000);
+
   let state = windowStateKeeper({
     defaultHeight: 650, defaultWidth: 500
   })
