@@ -1,0 +1,39 @@
+{
+  "name": "bookmark",
+  "version": "1.0.0",
+  "description": "App to bookmark urls",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "start:dev": "nodemon --watch . --exec electron .",
+    "build": "electron-builder build -mwl"
+  },
+  "author": "Ram Kumar Bhandari",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.14.5",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.vhndaree.bookmarkdesktop",
+    "copyright": "Copyright Vhndaree",
+    "mac":{
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win":{
+      "target": "zip",
+      "certificate": "private.vhndaree.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": false
+    },
+    "linux":{
+      "category": "Utility"
+    }
+  }
+}
